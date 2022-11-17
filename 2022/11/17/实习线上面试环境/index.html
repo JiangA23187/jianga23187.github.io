@@ -42,11 +42,11 @@
 <meta property="og:title" content="Vulnhub靶场 实习线上面试环境">
 <meta property="og:url" content="http://example.com/2022/11/17/%E5%AE%9E%E4%B9%A0%E7%BA%BF%E4%B8%8A%E9%9D%A2%E8%AF%95%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Blogs for JiangA23187">
-<meta property="og:description" content="环境 题目一：命令执行访问http:&#x2F;&#x2F;192.168.189.136:64628&#x2F;  给出提示让我们用cmd参数执行命令  然后 就有了flag？  题目二：ThinkphpRCEhttp:&#x2F;&#x2F;192.168.189.136:49171&#x2F; 访问后看到ico图标是thinkphp的  随手访问下&#x2F;index.php，报错获得版本号为5.1.30  搜下对应版本，发现该版本有一个RCE洞">
+<meta property="og:description" content="环境攻击机：192.168.189.129 靶机：192.168.189.136  题目一：命令执行访问http:&#x2F;&#x2F;192.168.189.136:64628&#x2F;  给出提示让我们用cmd参数执行命令  然后 就有了flag？  题目二：ThinkphpRCEhttp:&#x2F;&#x2F;192.168.189.136:49171&#x2F; 访问后看到ico图标是thinkphp的  随手访问下&#x2F;index.p">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-17T07:36:41.027Z">
-<meta property="article:modified_time" content="2022-11-17T07:36:32.020Z">
+<meta property="article:modified_time" content="2022-11-17T07:50:38.048Z">
 <meta property="article:author" content="JiangA23187">
 <meta property="article:tag" content="靶场wp">
 <meta name="twitter:card" content="summary">
@@ -2192,7 +2192,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1668670641613),
+    lastupdate: new Date(1668671448776),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2647,7 +2647,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：498 字</p>
+      <p>字数：511 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2670,7 +2670,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p><img src="C:/Users/Jiang/AppData/Roaming/Typora/typora-user-images/image-20221117142807953.png" class="lazyload" data-srcset="C:/Users/Jiang/AppData/Roaming/Typora/typora-user-images/image-20221117142807953.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221117142807953"></p>
+    <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>攻击机：192.168.189.129</p>
+<p>靶机：192.168.189.136</p>
+<p><img src="C:/Users/Jiang/AppData/Roaming/Typora/typora-user-images/image-20221117142807953.png" class="lazyload" data-srcset="C:/Users/Jiang/AppData/Roaming/Typora/typora-user-images/image-20221117142807953.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221117142807953"></p>
 <h2 id="题目一：命令执行"><a href="#题目一：命令执行" class="headerlink" title="题目一：命令执行"></a>题目一：命令执行</h2><p>访问<a target="_blank" rel="noopener" href="http://192.168.189.136:64628/">http://192.168.189.136:64628/</a> </p>
 <p>给出提示让我们用cmd参数执行命令</p>
 <p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202211171429321.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202211171429321.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221117142903278"></p>
@@ -2751,7 +2753,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-17T15:36:32+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-17T15:50:38+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2022年11月17日</p>
@@ -2829,7 +2831,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：498 字</p>
+      <p>字数：511 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -3952,7 +3954,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Blogs for JiangA23187"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/靶场wp/","name":"靶场wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/17/实习线上面试环境/","name":"Vulnhub靶场 实习线上面试环境"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Blogs for JiangA23187","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Vulnhub靶场 实习线上面试环境","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/17/%E5%AE%9E%E4%B9%A0%E7%BA%BF%E4%B8%8A%E9%9D%A2%E8%AF%95%E7%8E%AF%E5%A2%83/"},"author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/17/%E5%AE%9E%E4%B9%A0%E7%BA%BF%E4%B8%8A%E9%9D%A2%E8%AF%95%E7%8E%AF%E5%A2%83/","wordCount":0,"datePublished":"2022-11-17T07:36:41.027Z","dateModified":"2022-11-17T07:36:32.020Z","articleSection":"靶场wp","keywords":"靶场wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Blogs for JiangA23187"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/靶场wp/","name":"靶场wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/17/实习线上面试环境/","name":"Vulnhub靶场 实习线上面试环境"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Blogs for JiangA23187","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Vulnhub靶场 实习线上面试环境","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/17/%E5%AE%9E%E4%B9%A0%E7%BA%BF%E4%B8%8A%E9%9D%A2%E8%AF%95%E7%8E%AF%E5%A2%83/"},"author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/17/%E5%AE%9E%E4%B9%A0%E7%BA%BF%E4%B8%8A%E9%9D%A2%E8%AF%95%E7%8E%AF%E5%A2%83/","wordCount":0,"datePublished":"2022-11-17T07:36:41.027Z","dateModified":"2022-11-17T07:50:38.048Z","articleSection":"靶场wp","keywords":"靶场wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
